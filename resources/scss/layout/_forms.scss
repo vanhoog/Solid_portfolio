@@ -1,0 +1,20 @@
+﻿select {
+    padding: 0.75em 1.25em !important;
+    height: auto;
+}
+fieldset {
+    border: none;
+}
+label {
+    display: block;
+}
+input {
+    padding: 0.75em 1.25em !important;
+    height: auto;
+    color: white;
+    background-color: transparent;
+    border-color: white;
+    &:focus {
+        background-color: transparent
+    }
+}

@@ -1,0 +1,61 @@
+﻿.c-socials {
+    margin-left: -0.25em;
+    margin-right: -0.25em;
+    max-width: 10em;
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+    margin-top: 0;
+}
+
+.c-socials__item {
+    display: inline-block;
+    width: 33.333%;
+    vertical-align: top;
+    margin: 0;
+    padding: 0 0.25em;
+
+}
+.c-socials__link {
+    padding: 0;
+    position: relative;
+    display: block;
+    padding-bottom: 100%;
+    transition: $hoverTransition;
+
+    &:hover {
+        background-color: transparent;
+        box-shadow: $hoverShadow;
+    }
+
+    &:after {
+        background-size: cover;
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &--facebook {
+        &:after {
+            background-image: url("../icons/if_facebook.svg");
+        }
+    }
+
+    &--linkedin {
+        &:after {
+            background-image: url("../icons/if_linkedin.svg");
+        }
+    }
+
+    &--twitter {
+        &:after {
+            background-image: url("../icons/if_twitter.svg");
+        }
+    }
+}

@@ -1,0 +1,70 @@
+﻿.o-columns {
+    margin-left: calc(#{-$colSpacing}/2);
+    margin-right: calc(#{-$colSpacing}/2);
+    margin-top: calc(#{-$colSpacing}/2);
+    margin-bottom: calc(#{-$colSpacing}/2);
+    font-family: monospace; // for spacing columns correctly
+    letter-spacing: -.65em; // this too */
+    text-align: left; // center or justify for columns in last row
+    &--equal {
+        overflow: hidden;
+        margin-bottom: 0;
+        margin-top: -$colSpacing;
+
+        .o-column {
+            margin-top: 0;
+            //margin-bottom: $colPadding;
+            padding: 0;
+
+            .o-column__inner {
+                padding: rem(10px);
+                margin-bottom: -9999px;
+                padding-bottom: 9999px;
+                border: calc(#{$colSpacing}/8) solid $primary-color; // color of the websites background
+                border-bottom: none;
+                border-top: $colSpacing solid $primary-color; // color of the websites background
+            }
+        }
+    }
+}
+
+.o-column {
+    margin-bottom: calc(#{$colSpacing}/2);
+    margin-top: calc(#{$colSpacing}/2);
+    font-family: $font-family; // be sure to reset the font and letter-spacing
+    letter-spacing: normal;
+    vertical-align: top;
+    display: inline-block;
+    padding: 0 calc(#{$colSpacing}/2);
+    width: 100%;
+    .o-column__inner{
+        padding: rem(20px);
+    }
+    @for $i from 1 through $gridSize {
+        $width: calc(100% / (#{$gridSize} / #{$i}));
+
+        &--#{$i} {
+            width: $width;
+        }
+    }
+
+    @media only screen and (min-width: $mid) {
+        @for $i from 1 through $gridSize {
+            $width: calc(100% / (#{$gridSize} / #{$i}));
+
+            &--M-#{$i} {
+                width: $width;
+            }
+        }
+    }
+
+    @media only screen and (min-width: $large) {
+        @for $i from 1 through $gridSize {
+            $width: calc(100% / (#{$gridSize} / #{$i}));
+
+            &--L-#{$i} {
+                width: $width;
+            }
+        }
+    }
+}

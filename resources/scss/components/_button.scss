@@ -1,0 +1,215 @@
+$btnPadding: 1em;
+
+button, .c-btn, .c-btn:visited {
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: calc(#{$btnPadding}/2) $btnPadding;
+    display: inline-block;
+    color: #444;
+    text-decoration: none;
+    font-weight: $regular;
+    transition: all 0.5s $hoverTransitionAlt, box-shadow 0.3s $hoverTransitionAlt ;
+    border-radius: rem(2px);
+    line-height: 1.25;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 0px 0px 0px;
+    width: auto;
+    position: relative;
+    span {
+        position: relative;
+        z-index: 1;
+    }
+    &.c-btn--more {
+        overflow: hidden;
+        &:after {
+            display: block;
+                transform: rotate(90deg);
+        }
+    }
+    &.c-btn--external {
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+    &:before {
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: all 0.3s $hoverTransitionAlt;
+        content: "";
+        position: absolute;
+        display: block;
+        left: 0;
+        right: -30px;
+        bottom: 0;
+        top: 0;
+        z-index: -1;
+        width: 0%;
+        left: 50%;
+        background-color: $primary-color;
+    }
+    &:after {
+        content: "\0000a0›";
+        display: inline-block;
+
+        position: relative;
+        //z-index: 1;
+
+
+    }
+    &:hover, &.active {
+        transition: all 0.5s $hoverTransitionAlt 0.4s, box-shadow 0.3s $hoverTransitionAlt 0s, color $hoverTransition;
+        color: #ffffff;
+        box-shadow: $hoverShadow;
+        background-color: transparent;
+            &:before {
+                transform: translateX(-0%);
+                left: 0%;
+                width: 100%;
+                opacity: 1;
+            }
+    }
+    &:active, &.active {
+        box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 0px 0px 0px;
+    }
+}
+.js-filterList {
+    margin-left: -1em;
+    margin-right: -1em;
+    text-align: center;
+    @media only screen and (min-width: $mid) {
+        text-align: left;
+    }
+    li {
+        display: inline-block;
+        @media only screen and (min-width: $mid) {
+            display: block;
+        }
+    }
+}
+.js-filterList .js-filterBtn {
+
+    @media only screen and (min-width: $mid) {
+        margin-left: -1em;
+    }
+
+    &:after {
+        display: none;
+    }
+}
+.js-filterBtn--alt {
+    margin-left: 0;
+}
+.js-filterBtn[data-filter="Saturday"], .js-filterBtn:visited[data-filter="Saturday"] {
+    &:hover, &.active {
+        &:before {
+            background-color: $secondary-color;
+        }
+    }
+}
+.js-filterBtn[data-filter="all"], .js-filterBtn:visited[data-filter="all"] {
+    &:hover, &.active {
+        &:before {
+            background-color: $quinary-color;
+        }
+    }
+}
+
+.js-filterBtn[data-filter="Sunday"], .js-filterBtn:visited[data-filter="Sunday"] {
+    &:hover, &.active {
+        &:before {
+            background-color: $tertiary-color;
+        }
+    }
+}
+.js-filterBtn[data-filter="Friday"], .js-filterBtn:visited[data-filter="Friday"] {
+    &:hover, &.active {
+        &:before {
+            background-color: $quartary-color;
+        }
+    }
+}
+.c-btn--secondary, .c-btn--secondary:visited {
+
+    &:before {
+        background-color: $secondary-color;
+    }
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+.c-btn--reverse, .c-btn--reverse:visited {
+    background-color: transparent;
+    color: $primary-color;
+    border: solid rem(1px) $primary-color;
+    padding: calc((#{$btnPadding} / 2) - 1px) calc(#{$btnPadding} - 1px);
+    padding-right:  calc((#{$btnPadding} * 3.5) - 1px);
+    box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0);
+
+    position: relative;
+    &:after {
+        border-left: rem(1px) solid $primary-color;
+        margin-left: 1em;
+        //content: "\A0\A0\203A";
+        position: absolute;
+        right: $btnPadding;
+        padding-top: 0.35em;
+        padding-bottom: 0.35em;
+        top: 0;
+        bottom: 0;
+        padding-left: 0.5rem;
+    }
+    &:hover {
+    //    background-color: $primary-color;
+        box-shadow: none;
+        color: #ffffff;
+        box-shadow: $hoverShadow;
+        &:after {
+               border-left: 1px solid #fafafa;
+        }
+    }
+
+    &.c-btn--reverse-secondary, .c-btn--reverse-secondary:visited {
+        border-color: $secondary-color;
+        color: $secondary-color;
+        &:after {
+               border-left: rem(1px) solid $secondary-color;
+        }
+        &:hover {
+            color: #ffffff;
+            &:before {
+                background-color: $secondary-color;
+            }
+            &:after {
+                   border-left: rem(1px) solid #fafafa;
+            }
+        }
+    }
+    &:active {
+        box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 0px 0px 0px;
+    }
+}
+
+
+
+.c-btn-group {
+    font-family: monospace; // for spacing columns correctly
+    letter-spacing: -.65em; // this too */
+    text-align: left;
+    margin-bottom: calc(#{-$paragraph-margin}/2);
+    margin-top: calc(#{-$paragraph-margin}/2);
+    margin-left: -$paragraph-margin;
+
+    .c-btn {
+        margin-bottom: calc(#{$paragraph-margin}/2);
+        margin-top: calc(#{$paragraph-margin}/2);
+        font-family: $font-family; // be sure to reset the font and letter-spacing
+        letter-spacing: normal;
+        vertical-align: top;
+        vertical-align: top;
+        margin-left: $paragraph-margin;
+    }
+}

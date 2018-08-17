@@ -1,0 +1,59 @@
+﻿/* Include animations */
+
+.js .js-fadein, .js .js-fadein-up, .js .js-fadein-down, .js .js-fadein-left, .js .js-fadein-right {
+    opacity: 0;
+    //transition: opacity .8s cubic-bezier(0.43, 0, 0.14, 1.01),transform .8s cubic-bezier(0.43, 0, 0.14, 1.01);
+    transition: opacity .8s cubic-bezier(.25,.8,.25,1),transform .8s cubic-bezier(.25,.8,.25,1);
+}
+
+.js .js-fadein.js-fadein-delay, .js .js-fadein-up.js-fadein-delay, .js .js-fadein-down.js-fadein-delay, .js .js-fadein-left.js-fadein-delay, .js .js-fadein-right.js-fadein-delay {
+    transition-delay: .8s
+}
+
+.js .js-fadein:not(.show), .js .js-fadein-up:not(.show), .js .js-fadein-down:not(.show), .js .js-fadein-left:not(.show), .js .js-fadein-right:not(.show) {
+    cursor: default
+}
+
+.js .js-fadein.show, .js .js-fadein-up.show, .js .js-fadein-down.show, .js .js-fadein-left.show, .js .js-fadein-right.show {
+    opacity: 1
+}
+
+.js .js-fadein.fadeout, .js .js-fadein-up.fadeout, .js .js-fadein-down.fadeout, .js .js-fadein-left.fadeout, .js .js-fadein-right.fadeout {
+    opacity: 0
+}
+
+.js .js-fadein-up, .js .js-fadein-left, .js .js-fadein-right {
+    -ms-transform: translateY(80px);
+    transform: translateY(80px)
+}
+
+.js .js-fadein-down {
+    -ms-transform: translateY(-80px);
+    transform: translateY(-80px)
+}
+
+.js .js-fadein-up.show, .js .js-fadein-down.show, .js .js-fadein-left.show, .js .js-fadein-right.show {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -ms-transform: translateY(0);
+    transform: translateY(0)
+}
+
+
+
+@media only screen and (min-width: $mid) {
+    .js .js-fadein-left {
+        -ms-transform: translateX(320px);
+        transform: translateX(320px)
+    }
+
+    .js .js-fadein-right {
+        -ms-transform: translateX(-320px);
+        transform: translateX(-320px)
+    }
+
+    .js .js-fadein-left.show, .js .js-fadein-right.show {
+        -ms-transform: translateX(0);
+        transform: translateX(0)
+    }
+}

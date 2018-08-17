@@ -1,0 +1,16 @@
+.c-partners{
+    li {
+        a {
+
+            img {
+                transition: $hoverTransition;
+                opacity: 0.75;
+            }
+            &:hover {
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

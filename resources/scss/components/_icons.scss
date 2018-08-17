@@ -1,0 +1,31 @@
+.c-icon-list {
+    display: block;
+    margin-left: -0.25em;
+    margin-right: -0.25em;
+    list-style: none;
+    width: 100%;
+    margin-top: 0;
+}
+
+.c-icon {
+    display: inline-block;
+//    padding: 0 0.25em;
+    vertical-align: top;
+    margin: 0;
+    position: relative;
+    height: 1.75em;
+    img {
+        max-height: 100%;
+    }
+}
+
+.c-subtitle {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    line-height: 1;
+}
+
+.c-title{
+    margin-bottom:0.25em;
+}

@@ -1,0 +1,40 @@
+﻿// Project colors
+$primary-color: #67d6b7;
+$secondary-color: #f7b634;
+$tertiary-color: #41a5e3;
+$quartary-color: #e94a4f;
+$quinary-color: #f39f5b;
+$quiet-color: #fafafa;
+$text-color: #222;
+
+// Grid
+$colSpacing: rem(30px);// in pixels, for easyness
+$colPadding: rem(40px);// in pixels, for easyness
+$gridSize: 12;
+$main-bg: #ffffff;
+
+// Font weights
+$light: 100;
+$regular: 400;
+$bold: 600;
+
+// Base Font
+$base-font-size: rem(14px);
+$font-family: 'Noto Sans', sans-serif;
+$heading-family: 'Krona One', sans-serif;
+//Margin
+$page-margin: rem(20px);
+$paragraph-margin: rem(14px);
+
+//Transition
+$hoverTransition: 0.3s cubic-bezier(.25,.8,.25,1);
+$hoverTransitionAlt: cubic-bezier(.25,.8,.25,1);
+
+//Box shadow
+$basicShadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$hoverShadow: 0px 4px 10px 0 rgba(0,0,0,0.1), 0px 2px 10px 0px rgba(0,0,0,0.1);
+$fixedShadow: rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px, rgba(0, 0, 0, 0.2) 0px 2px 4px -1px;
+
+
+$mid: 600px;
+$large: 900px;

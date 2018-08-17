@@ -1,0 +1,119 @@
+<section class="o-content o-segment-main">
+    <h2 class="u-light u-center o-section-main o-section-start">
+        Line-up
+    </h2>
+    <div class="js-LoadMore js-filter" data-text="Load more">
+        <div class="o-columns">
+            <aside class="o-column o-column--12 o-column--M-2">
+                <ul class="u-list js-filterList">
+                    <li>
+                       <button  (click)="filter('all')" class="c-btn js-filterBtn u-radius active" [ngClass]="{'active': day == 'all' || day == null }" data-filter="all">
+                           All days
+                       </button>
+                   </li>
+                    <li>
+                        <button (click)="filter('Friday')" class="c-btn js-filterBtn u-radius" [ngClass]="{'active': day == 'Friday' }" data-filter="Friday">
+                            Friday
+                        </button>
+                    </li>
+                    <li>
+                        <button  (click)="filter('Saturday')" class="c-btn js-filterBtn u-radius" [ngClass]="{'active': day == 'Saturday' }" data-filter="Saturday">
+                            Saturday
+                        </button>
+                    </li>
+                    <li>
+                       <button  (click)="filter('Sunday')" class="c-btn js-filterBtn u-radius" [ngClass]="{'active': day == 'Sunday' }" data-filter="Sunday">
+                           Sunday
+                       </button>
+                   </li>
+                   <li>
+                      <button  (click)="filter('Favorites')" class="c-btn js-filterBtn u-radius" [ngClass]="{'active': day == 'Favorites' }" data-filter="favorites">
+                          Favorites
+                      </button>
+                  </li>
+                </ul>
+            </aside>
+            <main class="o-column o-column--12 u-rel o-column--M-10" >
+                <div class="o-columns">
+                    <ul class="u-list">
+                        <li  [class]="artist.favorite ? 'o-column o-column--12 o-column--M-6 o-column--L-4 js-item is-favorite' : 'o-column o-column--12 o-column--M-6 o-column--L-4 js-item'" data-type="{{ artist.day }}"   *ngFor="let artist of artists">
+                            <app-artist-list [artist]="artist" (onFavoriteChanged)="favorite(artist)" ></app-artist-list>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+            <div class="o-column o-column--12 o-column--M-2 o-section-start o-section-end">
+            </div>
+            <div class="o-column o-column--12 u-rel o-column--M-10">
+                <div class="o-section-main">
+                    <div class="o-columns o-section-subsub o-section-start">
+                        <div class="o-column o-column--M-2">
+                            <h2>Friday</h2>
+                        </div>
+                        <div class="o-column o-column--M-10">
+                            <table class="u-list" style="table-layout: fixed; width: 100%;">
+                                <tr>
+                                    <td *ngFor="let item of timetableFriday" class="u-radius u-quartary-bg u-center" style="padding: 0.5em;">
+                                        <span *ngIf="item.timeslot" class="u-light">
+                                            {{ item.timeslot }}
+                                            <strong style="display:block;  margin: 0 auto;">
+                                                {{ item.name }}
+                                                <span *ngIf="item.favorite">
+                                                    *
+                                                </span>
+                                            </strong>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="o-columns o-section-subsub">
+                        <div class="o-column o-column--M-2">
+                            <h2>Saturday</h2>
+                        </div>
+                        <div class="o-column o-column--M-10">
+                            <table class="u-list" style="table-layout: fixed; width: 100%;">
+                                <tr>
+                                    <td *ngFor="let item of timetableSaturday" class="u-radius u-center u-secondary-bg" style="padding: 0.5em;">
+                                        <span *ngIf="item.timeslot" class="u-light">
+                                            {{ item.timeslot }}
+                                            <strong style="display:block;  margin: 0 auto;">
+                                                {{ item.name }}
+                                                <span *ngIf="item.favorite">
+                                                    *
+                                                </span>
+                                            </strong>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="o-columns o-section-subsub o-section-end">
+                        <div class="o-column o-column--M-2">
+                            <h2>Sunday</h2>
+                        </div>
+                        <div class="o-column o-column--M-10">
+                            <table class="u-list" style="table-layout: fixed; width: 100%;">
+                                <tr>
+                                    <td *ngFor="let item of timetableSunday" class="u-radius u-center u-tertiary-bg" style="padding: 0.5em;">
+                                        <span *ngIf="item.timeslot" class="u-light">
+                                            {{ item.timeslot }}
+                                            <strong style="display:block;  margin: 0 auto;">
+                                                {{ item.name }}
+                                                <span *ngIf="item.favorite">
+                                                    *
+                                                </span>
+                                            </strong>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,269 @@
+﻿
+// body {
+//     @media only screen and (min-width: $mid) {
+//         padding-top: 63px; //Navigation Height. This will be taken over by the JS after the page has been loaded. This is needed for the page not to jump on load
+//     }
+//     @media only screen and (min-width: $large) {
+//         padding-top: 63px; //Navigation Height. This will be taken over by the JS after the page has been loaded. This is needed for the page not to jump on load
+//     }
+// }
+main {
+    &:before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: background $hoverTransition, z-index 0s 0.3s;
+    }
+}
+
+.is-activeNav {
+    main {
+        &:before {
+            z-index: 2;
+            background-color: rgba(0,0,0, 0.75);
+            transition: background $hoverTransition;
+        }
+    }
+
+    .c-nav {
+        transform: translateX(0);
+    }
+
+    .c-nav-toggle, .c-nav-toggle:visited {
+        border-radius: 100%;
+        padding: calc(#{$page-margin}/2);
+
+        &:hover {
+
+        }
+
+        &:after {
+            display: none;
+        }
+
+        &:before {
+            display: block;
+            background-image: url("../icons/ic_close.svg");
+            height: 1.25em;
+            transition: $hoverTransition;
+        }
+    }
+}
+
+.c-nav-toggle, .c-nav-toggle:visited {
+    background-color: $tertiary-color;
+    position: fixed;
+    top: calc(#{$page-margin}/2);
+    right: calc(#{$page-margin}/2);
+    z-index: 1000;
+    font-weight: $light;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0.5rem calc(#{$page-margin}/2);
+    box-shadow: $hoverShadow;
+    transition: $hoverTransition;
+    line-height: 1;
+
+    &:hover {
+        background-color: $tertiary-color;
+        color: #ffffff;
+        box-shadow: $basicShadow;
+    }
+
+    &:before {
+        margin: 0 auto;
+        content: "";
+        display: inline-block;
+        background-image: url("../icons/ic_menu.svg");
+        width: 1.25em;
+        height: 1em;
+        background-size: cover;
+        vertical-align: middle;
+        background-position: center center;
+    }
+
+    &:after {
+        content: "menu";
+        display: inline-block;
+        font-size: 10px;
+        vertical-align: middle;
+    }
+
+    @media only screen and (min-width: $mid) {
+        display: none;
+    }
+}
+.c-nav-bg{
+    background-color: $secondary-color;
+
+}
+.c-nav-logo {
+    margin-left: -1.175rem;
+    display: block;
+    padding: 1.175rem;
+    transition: $hoverTransition;
+    text-decoration: none;
+    img {
+        max-width: 17.5em;
+        width: 100%;
+    }
+    &:hover {
+        background-color: darken($secondary-color, 10%);
+    }
+}
+.c-nav {
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    background-color: $secondary-color;
+    transition: $hoverTransition;
+    z-index: 999;
+    transform: translateX(100%);
+    max-width: 320px;
+    width: 100%;
+
+    @media only screen and (min-width: $mid) {
+        max-width: none;
+        transform: translateX(0);
+        position: absolute;
+        bottom: auto;
+    }
+}
+
+.c-nav__list {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    margin-left: -$page-margin;
+    margin-right: -$page-margin;
+     @media only screen and (min-width: $mid) {
+         text-align: right;
+     }
+}
+
+.c-nav__item {
+    margin: 0;
+    padding: 0;
+     @media only screen and (min-width: $mid) {
+        display: inline-block;
+        vertical-align: top;
+     }
+
+}
+
+.c-nav__logo {
+    display: inline-block;
+    padding: 1em;
+}
+.c-subNav {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    .c-nav__link {
+        background-color: $secondary-color;
+        padding: 0.75em $page-margin;
+        padding-left: calc(#{$page-margin} * 1.5);
+        &:hover {
+            background-color: darken($secondary-color, 20%) !important;
+        }
+    }
+    @media only screen and (min-width: $mid) {
+        .c-nav__link {
+
+            padding-left: $page-margin;
+        }
+        margin-left: 0;
+        position: absolute;
+        transform: translateX(-50%);
+        height: 0;
+        background-color:  darken($secondary-color, 10%);
+        overflow: hidden;
+        transition: $hoverTransition;
+
+    }
+}
+
+.has-subNav:hover {
+    background-color: darken($secondary-color, 10%);
+    .c-nav__link {
+        background-color: transparent;
+    }
+    @media only screen and (min-width: $mid) {
+        .c-subNav {
+            height: 39px;
+            transition: $hoverTransition;
+            right: 0;
+
+        }
+        .c-nav__link--main {
+            &:after {
+                transform: rotateX(180deg);
+            }
+        }
+    }
+}
+
+.has-subNav {
+    transition: $hoverTransition;
+    .c-nav__link--main, .c-nav__link--main:visited {
+        border-bottom: none;
+    }
+    @media only screen and (min-width: $mid) {
+        .c-nav__link--main, .c-nav__link--main:visited {
+            border-bottom: none !important;
+            &:after {
+                content: "";
+                display: inline-block;
+                width: 1em;
+                height: 1em;
+                background-image: url('../icons/ic_keyboard_arrow_down.svg');
+                background-size: contain;
+                vertical-align: middle;
+                transition: $hoverTransition;
+            }
+        }
+    }
+}
+
+
+.c-nav__link, .c-nav__link:visited ,.c-nav-logo {
+    font-family: $heading-family;
+    background-color: $secondary-color;
+    font-size: 14px;
+    display: block;
+    padding: 2.5em $page-margin;
+    border-bottom: 1px solid darken($secondary-color, 10%);
+    text-decoration: none;
+    color: #ffffff;
+    overflow: hidden;
+    &:before {
+        width: 100%;
+        height: 100%;
+        top: 100%;
+        background-color:  darken($secondary-color, 10%);
+    }
+    &:after {
+        display: none;
+    }
+    &:hover {
+        color: #ffffff;
+        background-color:  darken($secondary-color, 10%);
+        box-shadow: none;
+        &:before {
+            top: 0;
+        }
+    }
+
+    @media only screen and (min-width: $mid) {
+        border-bottom: none;
+    }
+}
+.c-nav-logo {
+    padding: 2.3em $page-margin;
+}

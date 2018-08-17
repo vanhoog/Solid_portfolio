@@ -1,0 +1,40 @@
+﻿// Import all the files you need
+
+//General includes
+@import "base/normalize",
+        "includes/fonts",
+        "includes/mixins",
+        "includes/variables";
+
+
+//Helper includes
+
+
+//Base includes
+@import "base/base";
+
+//Layout includes
+@import "layout/layout",
+        "layout/columns",
+        "layout/navigation",
+        "layout/footer",
+        "layout/forms",
+        "layout/shame";
+
+//Components includes
+@import "components/button",
+        "components/card",
+        "components/social",
+        "components/lightbox",
+        "components/partners",
+        "components/header";
+
+//pages includes
+
+
+//Theme includes
+
+
+//Utilities includes
+@import "helpers/utilities",
+         "includes/animations";

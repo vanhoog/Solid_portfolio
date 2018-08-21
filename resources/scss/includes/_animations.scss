@@ -1,20 +1,20 @@
 ﻿/* Include animations */
 
-.js .js-fadein, .js .js-fadein-up, .js .js-fadein-down, .js .js-fadein-left, .js .js-fadein-right {
+.js-fade, .js .js-fadein, .js .js-fadein-up, .js .js-fadein-down, .js .js-fadein-left, .js .js-fadein-right {
     opacity: 0;
     //transition: opacity .8s cubic-bezier(0.43, 0, 0.14, 1.01),transform .8s cubic-bezier(0.43, 0, 0.14, 1.01);
     transition: opacity .8s cubic-bezier(.25,.8,.25,1),transform .8s cubic-bezier(.25,.8,.25,1);
 }
 
-.js .js-fadein.js-fadein-delay, .js .js-fadein-up.js-fadein-delay, .js .js-fadein-down.js-fadein-delay, .js .js-fadein-left.js-fadein-delay, .js .js-fadein-right.js-fadein-delay {
+.js-fade, .js .js-fadein.js-fadein-delay, .js .js-fadein-up.js-fadein-delay, .js .js-fadein-down.js-fadein-delay, .js .js-fadein-left.js-fadein-delay, .js .js-fadein-right.js-fadein-delay {
     transition-delay: .8s
 }
 
-.js .js-fadein:not(.show), .js .js-fadein-up:not(.show), .js .js-fadein-down:not(.show), .js .js-fadein-left:not(.show), .js .js-fadein-right:not(.show) {
+.js-fade, .js .js-fadein:not(.show), .js .js-fadein-up:not(.show), .js .js-fadein-down:not(.show), .js .js-fadein-left:not(.show), .js .js-fadein-right:not(.show) {
     cursor: default
 }
 
-.js .js-fadein.show, .js .js-fadein-up.show, .js .js-fadein-down.show, .js .js-fadein-left.show, .js .js-fadein-right.show {
+.js-fade.fading,  .js .js-fadein.show, .js .js-fadein-up.show, .js .js-fadein-down.show, .js .js-fadein-left.show, .js .js-fadein-right.show {
     opacity: 1
 }
 

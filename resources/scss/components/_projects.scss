@@ -1,36 +1,41 @@
-﻿
-
-.c-card {
+.c-project {
     position: relative;
+    .c-project__label {
+        padding: 0.5em 0.75em;
+        color: #fafafa;
+        background-color: $primary-color;
+        position: absolute;
+        top: 1em;
+        left: 1em;
+        z-index: 3;
+        box-shadow: $hoverShadow;
+        border-radius: 2px;
+    }
+
 }
+
+
 .c-card-title {
     margin-top: $paragraph-margin;
 }
 .c-card, .c-card:visited {
-
+    position: relative;
     .c-card__inner {
         background-color: #ffffff;
         position: relative;
         overflow: hidden;
         padding: calc( #{$colSpacing} / 2 );
-
     }
     text-decoration: none;
     color: $text-color;
-    img {
-        //transition: $hoverTransition;
-    }
+
     &:hover {
         color: $text-color;
-        img {
-            //transform: scale(1.1)
-        }
         h3 {
             color: #ffffff !important;
         }
         .c-image-card {
             &:before {
-                //transition: all 0.5s $hoverTransitionAlt 0.4s, box-shadow 0.3s $hoverTransitionAlt 0s, color $hoverTransition;
                 top: 100%;
                 height: 60px;
             }
@@ -171,5 +176,146 @@
     path {
         transition: fill  0.3s cubic-bezier(.25,.8,.25,1);
         fill: white;
+    }
+}
+
+.c-project--Hekwerk {
+    .c-project__label {
+        background-color: #005ac9;
+    }
+    .c-image-card {
+        border-bottom: 10px solid #005ac9;
+        &:before {
+            background-color: #005ac9;
+
+        }
+    }
+    .c-card__text {
+        h3 {
+            color: #005ac9;
+        }
+    }
+}
+
+.c-project--Leiden, .Marketing {
+    .c-project__label {
+        background-color: #E8212C;
+    }
+    .c-image-card {
+        border-bottom: 10px solid #E8212C;
+        &:before {
+            background-color: #E8212C;
+
+        }
+    }
+    .c-card__text {
+        h3 {
+            color: #E8212C;
+        }
+    }
+}
+.c-project--Medilingua {
+    .c-project__label {
+        background-color: #86DBBC;
+    }
+    .c-image-card {
+        border-bottom: 10px solid #86DBBC;
+        &:before {
+            background-color: #86DBBC;
+
+        }
+    }
+    .c-card__text {
+        h3 {
+            color: #86DBBC;
+        }
+    }
+}
+.c-project--TinQwise {
+    .c-project__label {
+        background-color: #d40000;
+    }
+    .c-image-card {
+        border-bottom: 10px solid #d40000;
+        &:before {
+            background-color: #d40000;
+
+        }
+    }
+    .c-card__text {
+        h3 {
+            color: #d40000;
+        }
+    }
+}
+
+.c-project--Liff {
+    .c-project__label {
+        background-color: #e62936;
+    }
+    .c-image-card {
+        border-bottom: 10px solid #e62936;
+        &:before {
+            background-color: #e62936;
+
+        }
+    }
+    .c-card__text {
+        h3 {
+            color: #e62936;
+        }
+    }
+}
+
+.c-project--Hooymeijer {
+    .c-project__label {
+        background-color: #ef4123;
+    }
+    .c-image-card {
+        border-bottom: 10px solid #ef4123;
+        &:before {
+            background-color: #ef4123;
+
+        }
+    }
+    .c-card__text {
+        h3 {
+            color: #ef4123;
+        }
+    }
+}
+.c-project--Gemiva {
+    .c-project__label {
+        background-color: #f15a22;
+    }
+    .c-image-card {
+        border-bottom: 10px solid #f15a22;
+        &:before {
+            background-color: #f15a22;
+
+        }
+    }
+    .c-card__text {
+        h3 {
+            color: #f15a22;
+        }
+    }
+}
+
+.c-project--Wij {
+    .c-project__label {
+        background-color: #d24327;
+    }
+    .c-image-card {
+        border-bottom: 10px solid #d24327;
+        &:before {
+            background-color: #d24327;
+
+        }
+    }
+    .c-card__text {
+        h3 {
+            color: #d24327;
+        }
     }
 }

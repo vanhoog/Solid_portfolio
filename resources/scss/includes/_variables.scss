@@ -1,11 +1,9 @@
 ﻿// Project colors
-$primary-color: #67d6b7;
-$secondary-color: #f7b634;
-$tertiary-color: #41a5e3;
-$quartary-color: #e94a4f;
-$quinary-color: #f39f5b;
+$primary-color: #41a5e3;
+$secondary-color: #58ab55;
+$tertiary-color: #e94a4f;
 $quiet-color: #fafafa;
-$text-color: #222;
+$text-color: #444;
 
 // Grid
 $colSpacing: rem(30px);// in pixels, for easyness
@@ -20,8 +18,8 @@ $bold: 600;
 
 // Base Font
 $base-font-size: rem(14px);
-$font-family: 'Noto Sans', sans-serif;
-$heading-family: 'Krona One', sans-serif;
+$font-family: 'Source Code Pro', monospace;
+$heading-family: 'Noto Sans', sans-serif;
 //Margin
 $page-margin: rem(20px);
 $paragraph-margin: rem(14px);

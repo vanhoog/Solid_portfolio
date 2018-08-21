@@ -7,7 +7,9 @@
     position: absolute !important;
     width: 1px;
 }
-
+.u-border-end {
+    border-bottom: 5px solid $secondary-color;
+}
 .u-accessibility:focus, .u-accessibility:active {
     clip: auto;
     height: auto;
@@ -39,9 +41,7 @@
 .u-tertiary-bg {
     background-color: $tertiary-color;
 }
-.u-quartary-bg {
-    background-color: $quartary-color;
-}
+
 .u-shadow {
     box-shadow: $basicShadow;
 }
@@ -88,6 +88,10 @@
     padding-bottom: 100%;
     position: relative;
     width: 100%;
+    caption {
+        position: absolute;
+        top: calc(100% + 1em)
+    }
 }
 
  .u-image--66 {

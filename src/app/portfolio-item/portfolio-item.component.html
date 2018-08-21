@@ -1,0 +1,25 @@
+<div class="o-section-main">
+    <div class="o-columns">
+        <div class="o-page">
+            <div class="o-content">
+                <ul class="u-list u-mod">
+                    <li class="o-column o-column--12 o-column--M-6 o-column--L-4 c-project c-project--{{project.client}}"  *ngFor="let project of projects">
+                        <div class="c-card">
+                            <span class="u-radius c-project__label">{{ project.client }}</span>
+                            <div class="u-shadow c-card__inner u-radius">
+                                <div class="c-image-card">
+                                    <figure class="u-image c-image-card__wrapper">
+                                        <img src="{{ project.images[0].url }}" width="640" height="358" />
+                                    </figure>
+                                </div>
+                                <div class="c-card__text">
+                                    <h3>{{ project.title }}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

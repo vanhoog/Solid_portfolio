@@ -8,7 +8,7 @@ button, .c-btn, .c-btn:visited {
     cursor: pointer;
     padding: calc(#{$btnPadding}/2) $btnPadding;
     display: inline-block;
-    color: #444;
+    color: $text-color;
     text-decoration: none;
     font-weight: $regular;
     transition: all 0.5s $hoverTransitionAlt, box-shadow 0.3s $hoverTransitionAlt ;
@@ -101,35 +101,7 @@ button, .c-btn, .c-btn:visited {
 .js-filterBtn--alt {
     margin-left: 0;
 }
-.js-filterBtn[data-filter="Saturday"], .js-filterBtn:visited[data-filter="Saturday"] {
-    &:hover, &.active {
-        &:before {
-            background-color: $secondary-color;
-        }
-    }
-}
-.js-filterBtn[data-filter="all"], .js-filterBtn:visited[data-filter="all"] {
-    &:hover, &.active {
-        &:before {
-            background-color: $quinary-color;
-        }
-    }
-}
 
-.js-filterBtn[data-filter="Sunday"], .js-filterBtn:visited[data-filter="Sunday"] {
-    &:hover, &.active {
-        &:before {
-            background-color: $tertiary-color;
-        }
-    }
-}
-.js-filterBtn[data-filter="Friday"], .js-filterBtn:visited[data-filter="Friday"] {
-    &:hover, &.active {
-        &:before {
-            background-color: $quartary-color;
-        }
-    }
-}
 .c-btn--secondary, .c-btn--secondary:visited {
 
     &:before {
